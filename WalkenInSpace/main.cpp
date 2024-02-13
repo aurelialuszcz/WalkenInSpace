@@ -6,8 +6,23 @@
 //
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 int main(int argc, const char * argv[]) {
-    std::cout << "Hello, World!\n";
+   
+    sf::RenderWindow window(sf::VideoMode(640, 800), "This is a test");
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        
+        window.clear();
+        window.display();
+    }
+    
     return 0;
 }
