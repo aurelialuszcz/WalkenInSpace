@@ -4,17 +4,11 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "Textures.hpp"
-//#include "GameObject.hpp"
 #include "Map.hpp"
 #include "ECS.hpp"
 #include "Components.hpp"
-#include "TransformComponent.hpp"
-#include "SpriteComponent.hpp"
 #include "Vector2D.hpp"
-#include "KeyboardController.hpp"
 
-//GameObject* player;
-//GameObject* enemy;
 Map* map;
 Manager manager;
 
@@ -52,17 +46,14 @@ void Game::init(const char *title, int x, int y, int width, int height, bool ful
         isRunning = true;
         
     } 
-    
-    // Objects creation
-    //player = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG",0,0);
-    //enemy = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG", 50, 50);
+
+    // map creation (background)
     map = new Map();
-    
+    // player object creation
     player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG");
     player.addComponent<KeyboardController>();
-    //newPlayer.addComponent<PositionComponent>();
-    //newPlayer.getComponent<PositionComponent>().setPos(500,500);
+    
 }
 
 void Game::handleEvents() {
@@ -79,24 +70,15 @@ void Game::handleEvents() {
 
 void Game::update() {
     
-    //player->Update();
-    //enemy->Update();
     manager.refresh();
     manager.update();
-    
-    /*player.getComponent<TransformComponent>().position.Add(Vector2D(0, 5));
-    if (player.getComponent<TransformComponent>().position.x > 100) {
-        player.getComponent<SpriteComponent>().setTex("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG");
-    }*/
-    /*std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;*/
+
 }
 
 void Game::render() {
     SDL_RenderClear(renderer);
     map->DrawMap();
     manager.draw();
-    //player->Render();
-    //enemy->Render();
     SDL_RenderPresent(renderer);
 }
 
