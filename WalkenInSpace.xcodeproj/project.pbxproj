@@ -24,6 +24,7 @@
 		9E7AE0162BA25BD700202BEA /* Textures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0142BA25BD700202BEA /* Textures.cpp */; };
 		9E7AE0192BA2615300202BEA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0172BA2615300202BEA /* GameObject.cpp */; };
 		9E7AE01C2BB33A2000202BEA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE01B2BB33A2000202BEA /* Map.cpp */; };
+		9E7AE01F2BB34AAE00202BEA /* ECS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE01D2BB34AAE00202BEA /* ECS.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,9 @@
 		9E7AE0182BA2615300202BEA /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		9E7AE01A2BB3395000202BEA /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
 		9E7AE01B2BB33A2000202BEA /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		9E7AE01D2BB34AAE00202BEA /* ECS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ECS.cpp; sourceTree = "<group>"; };
+		9E7AE01E2BB34AAE00202BEA /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
+		9E7AE0202BB3539900202BEA /* Components.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Components.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,9 @@
 				9E7AE0182BA2615300202BEA /* GameObject.hpp */,
 				9E7AE01A2BB3395000202BEA /* Map.hpp */,
 				9E7AE01B2BB33A2000202BEA /* Map.cpp */,
+				9E7AE01D2BB34AAE00202BEA /* ECS.cpp */,
+				9E7AE01E2BB34AAE00202BEA /* ECS.hpp */,
+				9E7AE0202BB3539900202BEA /* Components.hpp */,
 			);
 			path = WalkenInSpace;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 				9E7AE0192BA2615300202BEA /* GameObject.cpp in Sources */,
 				9E7AE01C2BB33A2000202BEA /* Map.cpp in Sources */,
 				9E74B8072B712A32003F0D3E /* main.cpp in Sources */,
+				9E7AE01F2BB34AAE00202BEA /* ECS.cpp in Sources */,
 				9E7AE0162BA25BD700202BEA /* Textures.cpp in Sources */,
 				9E7AE0132BA0C97E00202BEA /* Game.cpp in Sources */,
 			);
