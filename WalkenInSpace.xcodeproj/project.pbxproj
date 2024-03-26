@@ -88,6 +88,7 @@
 		9E7AE0232BB3615500202BEA /* TransformComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TransformComponent.hpp; sourceTree = "<group>"; };
 		9E7AE0242BB370F600202BEA /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
 		9E7AE0252BB3723600202BEA /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
+		9E7AE0272BB377E600202BEA /* KeyboardController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KeyboardController.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +151,7 @@
 				9E7AE01B2BB33A2000202BEA /* Map.cpp */,
 				9E7AE0242BB370F600202BEA /* Vector2D.hpp */,
 				9E7AE0252BB3723600202BEA /* Vector2D.cpp */,
+				9E7AE0272BB377E600202BEA /* KeyboardController.hpp */,
 			);
 			path = WalkenInSpace;
 			sourceTree = "<group>";

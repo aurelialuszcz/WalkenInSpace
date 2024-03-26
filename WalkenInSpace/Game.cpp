@@ -11,6 +11,7 @@
 #include "TransformComponent.hpp"
 #include "SpriteComponent.hpp"
 #include "Vector2D.hpp"
+#include "KeyboardController.hpp"
 
 //GameObject* player;
 //GameObject* enemy;
@@ -18,7 +19,7 @@ Map* map;
 Manager manager;
 
 SDL_Renderer* Game::renderer = nullptr;
-
+SDL_Event Game::event;
 auto& player(manager.addEntity());
 
 Game::Game() {};
@@ -59,13 +60,13 @@ void Game::init(const char *title, int x, int y, int width, int height, bool ful
     
     player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG");
-    
+    player.addComponent<KeyboardController>();
     //newPlayer.addComponent<PositionComponent>();
     //newPlayer.getComponent<PositionComponent>().setPos(500,500);
 }
 
 void Game::handleEvents() {
-    SDL_Event event;
+    
     SDL_PollEvent(&event);
     switch (event.type) {
         case SDL_QUIT:
@@ -82,10 +83,11 @@ void Game::update() {
     //enemy->Update();
     manager.refresh();
     manager.update();
-    player.getComponent<TransformComponent>().position.Add(Vector2D(0, 5));
+    
+    /*player.getComponent<TransformComponent>().position.Add(Vector2D(0, 5));
     if (player.getComponent<TransformComponent>().position.x > 100) {
         player.getComponent<SpriteComponent>().setTex("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG");
-    }
+    }*/
     /*std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;*/
 }
 
