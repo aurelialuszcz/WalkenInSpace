@@ -4,19 +4,21 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "Textures.hpp"
-#include "GameObject.hpp"
+//#include "GameObject.hpp"
 #include "Map.hpp"
 #include "ECS.hpp"
 #include "Components.hpp"
+#include "PositionComponent.hpp"
+#include "SpriteComponent.hpp"
 
-GameObject* player;
-GameObject* enemy;
+//GameObject* player;
+//GameObject* enemy;
 Map* map;
+Manager manager;
 
 SDL_Renderer* Game::renderer = nullptr;
 
-Manager manager;
-auto& newPlayer(manager.addEntity());
+auto& player(manager.addEntity());
 
 Game::Game() {};
 Game::~Game() {};
@@ -50,12 +52,15 @@ void Game::init(const char *title, int x, int y, int width, int height, bool ful
     } 
     
     // Objects creation
-    player = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG",0,0);
-    enemy = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG", 50, 50);
+    //player = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG",0,0);
+    //enemy = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG", 50, 50);
     map = new Map();
     
-    newPlayer.addComponent<PositionComponent>();
-    newPlayer.getComponent<PositionComponent>().setPos(500,500);
+    player.addComponent<PositionComponent>();
+    player.addComponent<SpriteComponent>("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG");
+    
+    //newPlayer.addComponent<PositionComponent>();
+    //newPlayer.getComponent<PositionComponent>().setPos(500,500);
 }
 
 void Game::handleEvents() {
@@ -72,17 +77,23 @@ void Game::handleEvents() {
 
 void Game::update() {
     
-    player->Update();
-    enemy->Update();
+    //player->Update();
+    //enemy->Update();
+    manager.refresh();
     manager.update();
-    std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;
+    
+    if (player.getComponent<PositionComponent>().x() > 100) {
+        player.getComponent<SpriteComponent>().setTex("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG");
+    }
+    /*std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;*/
 }
 
 void Game::render() {
     SDL_RenderClear(renderer);
     map->DrawMap();
-    player->Render();
-    enemy->Render();
+    manager.draw();
+    //player->Render();
+    //enemy->Render();
     SDL_RenderPresent(renderer);
 }
 
