@@ -8,8 +8,9 @@
 #include "Map.hpp"
 #include "ECS.hpp"
 #include "Components.hpp"
-#include "PositionComponent.hpp"
+#include "TransformComponent.hpp"
 #include "SpriteComponent.hpp"
+#include "Vector2D.hpp"
 
 //GameObject* player;
 //GameObject* enemy;
@@ -56,7 +57,7 @@ void Game::init(const char *title, int x, int y, int width, int height, bool ful
     //enemy = new GameObject("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG", 50, 50);
     map = new Map();
     
-    player.addComponent<PositionComponent>();
+    player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player.PNG");
     
     //newPlayer.addComponent<PositionComponent>();
@@ -81,8 +82,8 @@ void Game::update() {
     //enemy->Update();
     manager.refresh();
     manager.update();
-    
-    if (player.getComponent<PositionComponent>().x() > 100) {
+    player.getComponent<TransformComponent>().position.Add(Vector2D(0, 5));
+    if (player.getComponent<TransformComponent>().position.x > 100) {
         player.getComponent<SpriteComponent>().setTex("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider.PNG");
     }
     /*std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;*/

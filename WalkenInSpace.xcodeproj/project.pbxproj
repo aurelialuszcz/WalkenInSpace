@@ -24,6 +24,7 @@
 		9E7AE0162BA25BD700202BEA /* Textures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0142BA25BD700202BEA /* Textures.cpp */; };
 		9E7AE0192BA2615300202BEA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0172BA2615300202BEA /* GameObject.cpp */; };
 		9E7AE01C2BB33A2000202BEA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE01B2BB33A2000202BEA /* Map.cpp */; };
+		9E7AE0262BB3723600202BEA /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0252BB3723600202BEA /* Vector2D.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,7 +85,9 @@
 		9E7AE01E2BB34AAE00202BEA /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
 		9E7AE0202BB3539900202BEA /* Components.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Components.hpp; sourceTree = "<group>"; };
 		9E7AE0222BB3614400202BEA /* SpriteComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpriteComponent.hpp; sourceTree = "<group>"; };
-		9E7AE0232BB3615500202BEA /* PositionComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PositionComponent.hpp; sourceTree = "<group>"; };
+		9E7AE0232BB3615500202BEA /* TransformComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TransformComponent.hpp; sourceTree = "<group>"; };
+		9E7AE0242BB370F600202BEA /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
+		9E7AE0252BB3723600202BEA /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +139,7 @@
 				9E7AE0202BB3539900202BEA /* Components.hpp */,
 				9E7AE01E2BB34AAE00202BEA /* ECS.hpp */,
 				9E7AE0222BB3614400202BEA /* SpriteComponent.hpp */,
-				9E7AE0232BB3615500202BEA /* PositionComponent.hpp */,
+				9E7AE0232BB3615500202BEA /* TransformComponent.hpp */,
 				9E7AE0112BA0C97E00202BEA /* Game.cpp */,
 				9E7AE0122BA0C97E00202BEA /* Game.hpp */,
 				9E7AE0142BA25BD700202BEA /* Textures.cpp */,
@@ -145,6 +148,8 @@
 				9E7AE0182BA2615300202BEA /* GameObject.hpp */,
 				9E7AE01A2BB3395000202BEA /* Map.hpp */,
 				9E7AE01B2BB33A2000202BEA /* Map.cpp */,
+				9E7AE0242BB370F600202BEA /* Vector2D.hpp */,
+				9E7AE0252BB3723600202BEA /* Vector2D.cpp */,
 			);
 			path = WalkenInSpace;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				9E7AE0192BA2615300202BEA /* GameObject.cpp in Sources */,
 				9E7AE01C2BB33A2000202BEA /* Map.cpp in Sources */,
+				9E7AE0262BB3723600202BEA /* Vector2D.cpp in Sources */,
 				9E74B8072B712A32003F0D3E /* main.cpp in Sources */,
 				9E7AE0162BA25BD700202BEA /* Textures.cpp in Sources */,
 				9E7AE0132BA0C97E00202BEA /* Game.cpp in Sources */,
