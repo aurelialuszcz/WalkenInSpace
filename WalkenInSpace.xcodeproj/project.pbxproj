@@ -25,6 +25,8 @@
 		9E7AE0192BA2615300202BEA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0172BA2615300202BEA /* GameObject.cpp */; };
 		9E7AE01C2BB33A2000202BEA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE01B2BB33A2000202BEA /* Map.cpp */; };
 		9E7AE0262BB3723600202BEA /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE0252BB3723600202BEA /* Vector2D.cpp */; };
+		9E7AE02B2BB386FB00202BEA /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE02A2BB386FB00202BEA /* Collision.cpp */; };
+		9E7AE02E2BB454A800202BEA /* ECS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE02D2BB454A800202BEA /* ECS.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +91,11 @@
 		9E7AE0242BB370F600202BEA /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
 		9E7AE0252BB3723600202BEA /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
 		9E7AE0272BB377E600202BEA /* KeyboardController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KeyboardController.hpp; sourceTree = "<group>"; };
+		9E7AE0282BB3822F00202BEA /* ColliderComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColliderComponent.hpp; sourceTree = "<group>"; };
+		9E7AE0292BB3867A00202BEA /* Collision.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collision.hpp; sourceTree = "<group>"; };
+		9E7AE02A2BB386FB00202BEA /* Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
+		9E7AE02C2BB4408000202BEA /* TileComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TileComponent.hpp; sourceTree = "<group>"; };
+		9E7AE02D2BB454A800202BEA /* ECS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ECS.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +146,7 @@
 				9E74B8062B712A32003F0D3E /* main.cpp */,
 				9E7AE0202BB3539900202BEA /* Components.hpp */,
 				9E7AE01E2BB34AAE00202BEA /* ECS.hpp */,
+				9E7AE02D2BB454A800202BEA /* ECS.cpp */,
 				9E7AE0222BB3614400202BEA /* SpriteComponent.hpp */,
 				9E7AE0232BB3615500202BEA /* TransformComponent.hpp */,
 				9E7AE0112BA0C97E00202BEA /* Game.cpp */,
@@ -152,6 +160,10 @@
 				9E7AE0242BB370F600202BEA /* Vector2D.hpp */,
 				9E7AE0252BB3723600202BEA /* Vector2D.cpp */,
 				9E7AE0272BB377E600202BEA /* KeyboardController.hpp */,
+				9E7AE0282BB3822F00202BEA /* ColliderComponent.hpp */,
+				9E7AE0292BB3867A00202BEA /* Collision.hpp */,
+				9E7AE02A2BB386FB00202BEA /* Collision.cpp */,
+				9E7AE02C2BB4408000202BEA /* TileComponent.hpp */,
 			);
 			path = WalkenInSpace;
 			sourceTree = "<group>";
@@ -257,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E7AE02B2BB386FB00202BEA /* Collision.cpp in Sources */,
 				9E7AE0192BA2615300202BEA /* GameObject.cpp in Sources */,
 				9E7AE01C2BB33A2000202BEA /* Map.cpp in Sources */,
+				9E7AE02E2BB454A800202BEA /* ECS.cpp in Sources */,
 				9E7AE0262BB3723600202BEA /* Vector2D.cpp in Sources */,
 				9E74B8072B712A32003F0D3E /* main.cpp in Sources */,
 				9E7AE0162BA25BD700202BEA /* Textures.cpp in Sources */,

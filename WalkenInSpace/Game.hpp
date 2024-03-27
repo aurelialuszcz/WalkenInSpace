@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include "Textures.hpp"
+#include <vector>
+
+class ColliderComponent;
 
 class Game {
     
@@ -19,8 +22,10 @@ public:
     void render();
     void clean();
     bool running() { return isRunning; };
+    static void AddFile(int id, int x, int y);
     static SDL_Renderer *renderer;
     static SDL_Event event;
+    static std::vector<ColliderComponent*> colliders;
     
 private:
     bool isRunning;

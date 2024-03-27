@@ -7,8 +7,8 @@
 
 #ifndef Map_h
 #define Map_h
-#include "Game.hpp"
 #include "SDL.h"
+#include <iostream>
 
 class Map {
     
@@ -17,17 +17,7 @@ public:
     Map();
     ~Map();
     
-    void LoadMap(int arr[20][25]);
-    void DrawMap();
+    static void LoadMap(std::string path, int sizeX, int sizeY);
     
-private:
-    
-    SDL_Rect src, dest;
-    SDL_Texture*  brownMatter;
-    SDL_Texture* greenMatter;
-    SDL_Texture* space;
-    
-    int map[20][25];
 };
-
 #endif /* Map_h */
