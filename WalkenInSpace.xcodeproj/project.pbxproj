@@ -140,7 +140,6 @@
 			children = (
 				9E7AE00F2B9C9D3C00202BEA /* SDL_image.h */,
 				9E7ADFFC2B90D86400202BEA /* SDL.h */,
-				9E7AE0212BB3610800202BEA /* ECS */,
 				9E7ADFD32B8E1D0E00202BEA /* assets */,
 				9E74B83A2B8637F1003F0D3E /* stb_image.h */,
 				9E74B8062B712A32003F0D3E /* main.cpp */,
@@ -188,14 +187,6 @@
 				9E74B81F2B7AECD4003F0D3E /* libsfml-window.2.6.1.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9E7AE0212BB3610800202BEA /* ECS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ECS;
-			path = ../ECS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

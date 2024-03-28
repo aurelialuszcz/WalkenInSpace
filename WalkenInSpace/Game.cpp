@@ -21,6 +21,8 @@ std::vector<ColliderComponent*> Game::colliders;
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 
+bool Game::isRunning = false;
+
 enum groupLabels : std::size_t {
     
     groupMap,

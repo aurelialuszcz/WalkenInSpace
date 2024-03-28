@@ -60,6 +60,8 @@ public:
                     transform->velocity.y = 0;
                     break;
                 default:
+                case SDLK_ESCAPE:
+                    Game::isRunning = false;
                     break;
             }
         }
