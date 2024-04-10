@@ -107,7 +107,8 @@ static void initPlayer()
     stage.fighterTail->next = player;
     stage.fighterTail = player;
 
-    player->health = 1;
+    player->health = 100;
+    player->hitCount = 0;
     player->x = 300;
     player->y = 800;
     player->texture = playerTexture;
@@ -238,7 +239,7 @@ static void fireBullet(void)
 
     bullet->x = player->x;
     bullet->y = player->y;
-    bullet->dx = PLAYER_BULLET_SPEED;
+    bullet->dy = -PLAYER_BULLET_SPEED;
     bullet->health = 1;
     bullet->texture = bulletTexture;
     bullet->side = SIDE_PLAYER;
@@ -371,9 +372,14 @@ static int bulletHitFighter(Entity *b)
     {
         if (e->side != b->side && collision(b->x, b->y, b->w, b->h, e->x, e->y, e->w, e->h))
         {
-            b->health = 0;
-            e->health = 0;
-
+            if (e->hitCount == 0) {
+                            e->hitCount = 1;
+            } else if (e->hitCount == 1) {
+                // Two bullets hit the player, kill the player
+                b->health = 0;
+                e->health = 0;
+                e->hitCount = 0;
+            }
             return 1;
         }
     }

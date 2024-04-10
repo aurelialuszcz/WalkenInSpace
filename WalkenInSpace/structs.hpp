@@ -27,6 +27,7 @@ struct Entity
     int          health;
     int          reload;
     int          side;
+    int          hitCount;
     SDL_Texture *texture;
     Entity      *next;
 };
