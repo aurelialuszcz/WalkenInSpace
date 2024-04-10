@@ -372,13 +372,16 @@ static int bulletHitFighter(Entity *b)
     {
         if (e->side != b->side && collision(b->x, b->y, b->w, b->h, e->x, e->y, e->w, e->h))
         {
-            if (e->hitCount == 0) {
+            if (e == player && e->hitCount == 0) {
                             e->hitCount = 1;
             } else if (e->hitCount == 1) {
                 // Two bullets hit the player, kill the player
                 b->health = 0;
                 e->health = 0;
                 e->hitCount = 0;
+            } else if (e != player) {
+                b->health = 0;
+                e->health = 0;
             }
             return 1;
         }

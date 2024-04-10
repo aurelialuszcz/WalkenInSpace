@@ -11,7 +11,7 @@
 
 #define PLAYER_SPEED        4
 #define PLAYER_BULLET_SPEED 20
-#define ALIEN_BULLET_SPEED  8
+#define ALIEN_BULLET_SPEED  6
 
 #define MAX_KEYBOARD_KEYS 350
 
