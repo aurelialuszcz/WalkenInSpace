@@ -177,11 +177,11 @@ static void doStarfield(void)
 
     for (i = 0; i < MAX_STARS; i++)
     {
-        stars[i].y -= stars[i].speed;
+        stars[i].y += stars[i].speed;
 
-        if (stars[i].y < 0)
+        if (stars[i].y >= SCREEN_HEIGHT)
         {
-            stars[i].y = SCREEN_HEIGHT + stars[i].y;
+            stars[i].y = 0;
         }
     }
 }
