@@ -25,6 +25,8 @@
 		9EDF5EC62BBDA2AA00EC9DB1 /* draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EC42BBDA2AA00EC9DB1 /* draw.cpp */; };
 		9EDF5ECC2BBDB92500EC9DB1 /* stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5ECA2BBDB92500EC9DB1 /* stage.cpp */; };
 		9EDF5ECF2BBE074800EC9DB1 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5ECD2BBE074800EC9DB1 /* util.cpp */; };
+		9EDF5ED22BC8552D00EC9DB1 /* level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5ED02BC8552D00EC9DB1 /* level.cpp */; };
+		9EDF5ED52BD00DEF00EC9DB1 /* starfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5ED32BD00DEF00EC9DB1 /* starfield.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +90,10 @@
 		9EDF5ECB2BBDB92500EC9DB1 /* stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stage.hpp; sourceTree = "<group>"; };
 		9EDF5ECD2BBE074800EC9DB1 /* util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		9EDF5ECE2BBE074800EC9DB1 /* util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = util.hpp; sourceTree = "<group>"; };
+		9EDF5ED02BC8552D00EC9DB1 /* level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = level.cpp; sourceTree = "<group>"; };
+		9EDF5ED12BC8552D00EC9DB1 /* level.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = level.hpp; sourceTree = "<group>"; };
+		9EDF5ED32BD00DEF00EC9DB1 /* starfield.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = starfield.cpp; sourceTree = "<group>"; };
+		9EDF5ED42BD00DEF00EC9DB1 /* starfield.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = starfield.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,10 @@
 				9EDF5ECD2BBE074800EC9DB1 /* util.cpp */,
 				9EDF5ECE2BBE074800EC9DB1 /* util.hpp */,
 				9EDF5ECA2BBDB92500EC9DB1 /* stage.cpp */,
+				9EDF5ED32BD00DEF00EC9DB1 /* starfield.cpp */,
+				9EDF5ED42BD00DEF00EC9DB1 /* starfield.hpp */,
+				9EDF5ED02BC8552D00EC9DB1 /* level.cpp */,
+				9EDF5ED12BC8552D00EC9DB1 /* level.hpp */,
 				9EDF5ECB2BBDB92500EC9DB1 /* stage.hpp */,
 				9EDF5EC82BBDA2F400EC9DB1 /* common.hpp */,
 				9EDF5EC92BBDA32200EC9DB1 /* structs.hpp */,
@@ -246,9 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDF5ED22BC8552D00EC9DB1 /* level.cpp in Sources */,
 				9EDF5ECC2BBDB92500EC9DB1 /* stage.cpp in Sources */,
 				9EDF5E942BBD9BEF00EC9DB1 /* main.cpp in Sources */,
 				9EDF5EC02BBDA24D00EC9DB1 /* engine.cpp in Sources */,
+				9EDF5ED52BD00DEF00EC9DB1 /* starfield.cpp in Sources */,
 				9EDF5EC32BBDA28400EC9DB1 /* input.cpp in Sources */,
 				9EDF5EC62BBDA2AA00EC9DB1 /* draw.cpp in Sources */,
 				9EDF5ECF2BBE074800EC9DB1 /* util.cpp in Sources */,
