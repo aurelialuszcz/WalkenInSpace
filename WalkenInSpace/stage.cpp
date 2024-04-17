@@ -6,7 +6,6 @@
 #include "stage.hpp"
 #include "util.hpp"
 #include "level.hpp"
-#include "starfield.hpp"
 #include <stdlib.h>
 #include <iostream>
 
@@ -29,10 +28,10 @@ static void fireAlienBullet(Entity *e);
 static void clipPlayer(void);
 static void resetStage(void);
 static void drawBackground(void);
-void initStarfield(void);
-void drawStarfield(void);
+static void initStarfield(void);
+static void drawStarfield(void);
 static void doBackground(void);
-void doStarfield(void);
+static void doStarfield(void);
 
 
 static Entity      *player;
@@ -44,7 +43,7 @@ static SDL_Texture *background;
 static int          enemySpawnTimer;
 static int          stageResetTimer;
 static int          backgroundY;
-
+static Star         stars[MAX_STARS];
 
 void initStage(void)
 {
@@ -122,6 +121,20 @@ static void initPlayer()
     player->side = SIDE_PLAYER;
 }
 
+// EXTRA - moving stars backgrounds
+
+static void initStarfield(void)
+{
+    int i;
+
+    for (i = 0; i < MAX_STARS; i++)
+    {
+        stars[i].x = rand() % SCREEN_HEIGHT;
+        stars[i].y = rand() % SCREEN_HEIGHT;
+        stars[i].speed = 1 + rand() % 8;
+    }
+}
+
 // game logic - pulling all functions
 
 static void logic(void)
@@ -157,6 +170,22 @@ static void doBackground(void)
     }
 }
 
+// EXTRA - moving stars
+
+static void doStarfield(void)
+{
+    int i;
+
+    for (i = 0; i < MAX_STARS; i++)
+    {
+        stars[i].y += stars[i].speed;
+
+        if (stars[i].y >= SCREEN_HEIGHT)
+        {
+            stars[i].y = 0;
+        }
+    }
+}
 
 // keyboard control of player
 
@@ -407,9 +436,9 @@ static void clipPlayer(void)
             player->y = 0;
         }
 
-        if (player->x > SCREEN_WIDTH)
+        if (player->x > SCREEN_WIDTH - player->w)
         {
-            player->x = SCREEN_WIDTH;
+            player->x = SCREEN_WIDTH - player->w;
         }
 
         if (player->y > SCREEN_HEIGHT - player->h)
@@ -455,6 +484,21 @@ static void drawBullets(void)
     }
 }
 
+// draw stars to screen
+
+static void drawStarfield(void)
+{
+    int i, c;
+
+    for (i = 0; i < MAX_STARS; i++)
+    {
+        c = 32 * stars[i].speed;
+
+        SDL_SetRenderDrawColor(app.renderer, c, c, c, 255);
+
+        SDL_RenderDrawLine(app.renderer, stars[i].x, stars[i].y, stars[i].x, stars[i].y + 3);
+    }
+}
 
 // draw background to screen
 
