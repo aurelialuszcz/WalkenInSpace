@@ -1,7 +1,7 @@
 #include "common.hpp"
 #include "starfield.hpp"
 
-static Star         stars[MAX_STARS];
+static Star stars[MAX_STARS];
 
 extern App app;
 
@@ -53,3 +53,4 @@ void drawStarfield(void)
         SDL_RenderDrawLine(app.renderer, stars[i].x, stars[i].y, stars[i].x, stars[i].y + 3);
     }
 }
+

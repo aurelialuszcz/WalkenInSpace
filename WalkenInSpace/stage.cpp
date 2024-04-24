@@ -1,11 +1,13 @@
 // game stage
 
 #include "common.hpp"
-
+#include "texture.hpp"
 #include "draw.hpp"
 #include "stage.hpp"
 #include "util.hpp"
 #include "level.hpp"
+#include "starfield.hpp"
+#include "player.hpp"
 #include <stdlib.h>
 #include <iostream>
 
@@ -14,36 +16,36 @@ extern Stage stage;
 
 static void logic(void);
 static void draw(void);
-static void initPlayer(void);
-static void fireBullet(void);
-static void doPlayer(void);
+void initPlayer(void);
+void fireBullet(void);
+void doPlayer(void);
 static void doFighters(void);
 static void doBullets(void);
+void drawPlayer(void);
 static void drawFighters(void);
 static void drawBullets(void);
 static void spawnEnemies(void);
 static int  bulletHitFighter(Entity *b);
 static void doEnemies(void);
 static void fireAlienBullet(Entity *e);
-static void clipPlayer(void);
+void clipPlayer(void);
 static void resetStage(void);
 static void drawBackground(void);
-static void initStarfield(void);
-static void drawStarfield(void);
+void initStarfield(void);
+void drawStarfield(void);
 static void doBackground(void);
-static void doStarfield(void);
+void doStarfield(void);
 
 
 static Entity      *player;
-static SDL_Texture *bulletTexture;
+//static SDL_Texture *bulletTexture;
 static SDL_Texture *enemyTexture;
 static SDL_Texture *alienBulletTexture;
-static SDL_Texture *playerTexture;
+//static SDL_Texture *playerTexture;
 static SDL_Texture *background;
 static int          enemySpawnTimer;
 static int          stageResetTimer;
 static int          backgroundY;
-static Star         stars[MAX_STARS];
 
 void initStage(void)
 {
@@ -51,16 +53,16 @@ void initStage(void)
     app.delegate.draw = draw;
 
     memset(&stage, 0, sizeof(Stage));
+    stage.playerTail = &stage.playerHead;
     stage.fighterTail = &stage.fighterHead;
     stage.bulletTail = &stage.bulletHead;
     stage.explosionTail = &stage.explosionHead;
     stage.debrisTail = &stage.debrisHead;
 
     // character textures
-    bulletTexture = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/bullet.png");
+
     enemyTexture = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/spider128x128.png");
     alienBulletTexture = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/alienBullet.png");
-    playerTexture = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player64x64.png");
     background = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/background_.png");
     resetStage();
 }
@@ -100,7 +102,7 @@ static void resetStage(void)
 }
 
 // create player
-
+/*
 static void initPlayer()
 {
     player = (Entity *)malloc(sizeof(Entity));
@@ -119,21 +121,7 @@ static void initPlayer()
     //std::cout << player->w << std::endl;
     
     player->side = SIDE_PLAYER;
-}
-
-// EXTRA - moving stars backgrounds
-
-static void initStarfield(void)
-{
-    int i;
-
-    for (i = 0; i < MAX_STARS; i++)
-    {
-        stars[i].x = rand() % SCREEN_HEIGHT;
-        stars[i].y = rand() % SCREEN_HEIGHT;
-        stars[i].speed = 1 + rand() % 8;
-    }
-}
+}*/
 
 // game logic - pulling all functions
 
@@ -170,86 +158,7 @@ static void doBackground(void)
     }
 }
 
-// EXTRA - moving stars
-
-static void doStarfield(void)
-{
-    int i;
-
-    for (i = 0; i < MAX_STARS; i++)
-    {
-        stars[i].y += stars[i].speed;
-
-        if (stars[i].y >= SCREEN_HEIGHT)
-        {
-            stars[i].y = 0;
-        }
-    }
-}
-
-// keyboard control of player
-
-static void doPlayer(void)
-{
-    if (player != NULL)
-    {
-        player->dx = player->dy = 0;
-
-        if (player->reload > 0)
-        {
-            player->reload--;
-        }
-
-        if (app.keyboard[SDL_SCANCODE_UP])
-        {
-            player->dy = -PLAYER_SPEED;
-        }
-
-        if (app.keyboard[SDL_SCANCODE_DOWN])
-        {
-            player->dy = PLAYER_SPEED;
-        }
-
-        if (app.keyboard[SDL_SCANCODE_LEFT])
-        {
-            player->dx = -PLAYER_SPEED;
-        }
-
-        if (app.keyboard[SDL_SCANCODE_RIGHT])
-        {
-            player->dx = PLAYER_SPEED;
-        }
-
-        if (app.keyboard[SDL_SCANCODE_SPACE] && player->reload <= 0)
-        {
-            fireBullet();
-        }
-    }
-}
-
 // bullet creation
-
-static void fireBullet(void)
-{
-    Entity *bullet;
-
-    bullet = (Entity *)malloc(sizeof(Entity));
-    memset(bullet, 0, sizeof(Entity));
-    stage.bulletTail->next = bullet;
-    stage.bulletTail = bullet;
-
-    bullet->x = player->x;
-    bullet->y = player->y;
-    bullet->dy = -PLAYER_BULLET_SPEED;
-    bullet->health = 1;
-    bullet->texture = bulletTexture;
-    bullet->side = SIDE_PLAYER;
-    SDL_QueryTexture(bullet->texture, NULL, NULL, &bullet->w, &bullet->h);
-
-    bullet->y += (player->h / 2) - (bullet->h / 2);
-
-    player->reload = 8;
-}
 
 // enemy spawning
 
@@ -420,34 +329,6 @@ static void spawnEnemies(void)
     }
 }
 
-// player staying in the game screen
-
-static void clipPlayer(void)
-{
-    if (player != NULL)
-    {
-        if (player->x < 0)
-        {
-            player->x = 0;
-        }
-
-        if (player->y < 0)
-        {
-            player->y = 0;
-        }
-
-        if (player->x > SCREEN_WIDTH - player->w)
-        {
-            player->x = SCREEN_WIDTH - player->w;
-        }
-
-        if (player->y > SCREEN_HEIGHT - player->h)
-        {
-            player->y = SCREEN_HEIGHT - player->h;
-        }
-    }
-}
-
 // draw function of all characters
 
 static void draw(void)
@@ -460,6 +341,7 @@ static void draw(void)
 
     drawBullets();
 }
+
 // draw enemies to screen
 
 static void drawFighters(void)
@@ -484,22 +366,6 @@ static void drawBullets(void)
     }
 }
 
-// draw stars to screen
-
-static void drawStarfield(void)
-{
-    int i, c;
-
-    for (i = 0; i < MAX_STARS; i++)
-    {
-        c = 32 * stars[i].speed;
-
-        SDL_SetRenderDrawColor(app.renderer, c, c, c, 255);
-
-        SDL_RenderDrawLine(app.renderer, stars[i].x, stars[i].y, stars[i].x, stars[i].y + 3);
-    }
-}
-
 // draw background to screen
 
 static void drawBackground(void)
@@ -517,4 +383,3 @@ static void drawBackground(void)
         SDL_RenderCopy(app.renderer, background, NULL, &dest);
     }
 }
-

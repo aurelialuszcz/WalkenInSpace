@@ -54,24 +54,10 @@ struct Debris
     Debris      *next;
 };
 
-struct Bullet
-{
-    double      x;
-    double      y;
-    double      dx;
-    double      dy;
-    double      health;
-    int         damage;
-    int         facing;
-    Entity     *owner;
-    void (*draw)(Bullet *b);
-    Bullet *next;
-};
-
 typedef struct
 {
+    Entity playerHead, *playerTail;
     Entity    fighterHead, *fighterTail;
-    Entity entityHead, *entityTail;
     Entity    bulletHead, *bulletTail;
     Explosion explosionHead, *explosionTail;
     Debris    debrisHead, *debrisTail;

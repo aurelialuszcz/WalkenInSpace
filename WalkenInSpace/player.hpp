@@ -10,4 +10,10 @@
 
 #include <stdio.h>
 
+void initPlayer();
+void clipPlayer(void);
+void doPlayer(void);
+void fireBullet(void);
+void drawPlayer(void);
+
 #endif /* player_hpp */

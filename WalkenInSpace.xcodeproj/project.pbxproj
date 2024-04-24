@@ -31,6 +31,14 @@
 		9EDF5EDB2BD0208F00EC9DB1 /* enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5ED92BD0208F00EC9DB1 /* enemy.cpp */; };
 		9EDF5EDE2BD020A300EC9DB1 /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EDC2BD020A300EC9DB1 /* entity.cpp */; };
 		9EDF5EE12BD023BE00EC9DB1 /* bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EDF2BD023BE00EC9DB1 /* bullet.cpp */; };
+		9EDF5EE42BD14DBB00EC9DB1 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EE22BD14DBB00EC9DB1 /* camera.cpp */; };
+		9EDF5EE72BD14DEE00EC9DB1 /* effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EE52BD14DEE00EC9DB1 /* effects.cpp */; };
+		9EDF5EEA2BD14E5D00EC9DB1 /* entityCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EE82BD14E5D00EC9DB1 /* entityCreate.cpp */; };
+		9EDF5EED2BD1536D00EC9DB1 /* controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EEB2BD1536D00EC9DB1 /* controls.cpp */; };
+		9EDF5EF02BD1551B00EC9DB1 /* lookup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EEE2BD1551B00EC9DB1 /* lookup.cpp */; };
+		9EDF5EF32BD1554F00EC9DB1 /* widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EF12BD1554F00EC9DB1 /* widgets.cpp */; };
+		9EDF5EF62BD155D100EC9DB1 /* text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EF42BD155D100EC9DB1 /* text.cpp */; };
+		9EDF5EF92BD1562700EC9DB1 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EF72BD1562700EC9DB1 /* texture.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +114,22 @@
 		9EDF5EDD2BD020A300EC9DB1 /* entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = entity.hpp; sourceTree = "<group>"; };
 		9EDF5EDF2BD023BE00EC9DB1 /* bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bullet.cpp; sourceTree = "<group>"; };
 		9EDF5EE02BD023BE00EC9DB1 /* bullet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = bullet.hpp; sourceTree = "<group>"; };
+		9EDF5EE22BD14DBB00EC9DB1 /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		9EDF5EE32BD14DBB00EC9DB1 /* camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
+		9EDF5EE52BD14DEE00EC9DB1 /* effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = effects.cpp; sourceTree = "<group>"; };
+		9EDF5EE62BD14DEE00EC9DB1 /* effects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = effects.hpp; sourceTree = "<group>"; };
+		9EDF5EE82BD14E5D00EC9DB1 /* entityCreate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = entityCreate.cpp; sourceTree = "<group>"; };
+		9EDF5EE92BD14E5D00EC9DB1 /* entityCreate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = entityCreate.hpp; sourceTree = "<group>"; };
+		9EDF5EEB2BD1536D00EC9DB1 /* controls.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controls.cpp; sourceTree = "<group>"; };
+		9EDF5EEC2BD1536D00EC9DB1 /* controls.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = controls.hpp; sourceTree = "<group>"; };
+		9EDF5EEE2BD1551B00EC9DB1 /* lookup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lookup.cpp; sourceTree = "<group>"; };
+		9EDF5EEF2BD1551B00EC9DB1 /* lookup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lookup.hpp; sourceTree = "<group>"; };
+		9EDF5EF12BD1554F00EC9DB1 /* widgets.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = widgets.cpp; sourceTree = "<group>"; };
+		9EDF5EF22BD1554F00EC9DB1 /* widgets.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = widgets.hpp; sourceTree = "<group>"; };
+		9EDF5EF42BD155D100EC9DB1 /* text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = text.cpp; sourceTree = "<group>"; };
+		9EDF5EF52BD155D100EC9DB1 /* text.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = text.hpp; sourceTree = "<group>"; };
+		9EDF5EF72BD1562700EC9DB1 /* texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		9EDF5EF82BD1562700EC9DB1 /* texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = texture.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,20 +177,36 @@
 				9E7ADFFC2B90D86400202BEA /* SDL.h */,
 				9E74B83A2B8637F1003F0D3E /* stb_image.h */,
 				9EDF5E7B2BBD9BEE00EC9DB1 /* main.cpp */,
+				9EDF5EE82BD14E5D00EC9DB1 /* entityCreate.cpp */,
+				9EDF5EE92BD14E5D00EC9DB1 /* entityCreate.hpp */,
+				9EDF5EE52BD14DEE00EC9DB1 /* effects.cpp */,
+				9EDF5EE62BD14DEE00EC9DB1 /* effects.hpp */,
+				9EDF5EE22BD14DBB00EC9DB1 /* camera.cpp */,
+				9EDF5EE32BD14DBB00EC9DB1 /* camera.hpp */,
 				9EDF5EC42BBDA2AA00EC9DB1 /* draw.cpp */,
 				9EDF5EC72BBDA2D100EC9DB1 /* define.hpp */,
 				9EDF5ECD2BBE074800EC9DB1 /* util.cpp */,
 				9EDF5ECE2BBE074800EC9DB1 /* util.hpp */,
+				9EDF5EEE2BD1551B00EC9DB1 /* lookup.cpp */,
+				9EDF5EEF2BD1551B00EC9DB1 /* lookup.hpp */,
+				9EDF5EF12BD1554F00EC9DB1 /* widgets.cpp */,
+				9EDF5EF22BD1554F00EC9DB1 /* widgets.hpp */,
 				9EDF5ECA2BBDB92500EC9DB1 /* stage.cpp */,
 				9EDF5EDF2BD023BE00EC9DB1 /* bullet.cpp */,
 				9EDF5EE02BD023BE00EC9DB1 /* bullet.hpp */,
 				9EDF5ED32BD00DEF00EC9DB1 /* starfield.cpp */,
 				9EDF5ED62BD0117100EC9DB1 /* player.cpp */,
+				9EDF5EF72BD1562700EC9DB1 /* texture.cpp */,
+				9EDF5EF82BD1562700EC9DB1 /* texture.hpp */,
+				9EDF5EF42BD155D100EC9DB1 /* text.cpp */,
+				9EDF5EF52BD155D100EC9DB1 /* text.hpp */,
 				9EDF5EDC2BD020A300EC9DB1 /* entity.cpp */,
 				9EDF5EDD2BD020A300EC9DB1 /* entity.hpp */,
 				9EDF5ED92BD0208F00EC9DB1 /* enemy.cpp */,
 				9EDF5EDA2BD0208F00EC9DB1 /* enemy.hpp */,
 				9EDF5ED72BD0117100EC9DB1 /* player.hpp */,
+				9EDF5EEB2BD1536D00EC9DB1 /* controls.cpp */,
+				9EDF5EEC2BD1536D00EC9DB1 /* controls.hpp */,
 				9EDF5ED42BD00DEF00EC9DB1 /* starfield.hpp */,
 				9EDF5ED02BC8552D00EC9DB1 /* level.cpp */,
 				9EDF5ED12BC8552D00EC9DB1 /* level.hpp */,
@@ -276,18 +316,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDF5EE42BD14DBB00EC9DB1 /* camera.cpp in Sources */,
+				9EDF5EED2BD1536D00EC9DB1 /* controls.cpp in Sources */,
 				9EDF5EDB2BD0208F00EC9DB1 /* enemy.cpp in Sources */,
 				9EDF5ED22BC8552D00EC9DB1 /* level.cpp in Sources */,
 				9EDF5EDE2BD020A300EC9DB1 /* entity.cpp in Sources */,
+				9EDF5EE72BD14DEE00EC9DB1 /* effects.cpp in Sources */,
 				9EDF5ECC2BBDB92500EC9DB1 /* stage.cpp in Sources */,
 				9EDF5ED82BD0117100EC9DB1 /* player.cpp in Sources */,
 				9EDF5E942BBD9BEF00EC9DB1 /* main.cpp in Sources */,
+				9EDF5EF92BD1562700EC9DB1 /* texture.cpp in Sources */,
+				9EDF5EEA2BD14E5D00EC9DB1 /* entityCreate.cpp in Sources */,
 				9EDF5EC02BBDA24D00EC9DB1 /* engine.cpp in Sources */,
 				9EDF5EE12BD023BE00EC9DB1 /* bullet.cpp in Sources */,
 				9EDF5ED52BD00DEF00EC9DB1 /* starfield.cpp in Sources */,
+				9EDF5EF62BD155D100EC9DB1 /* text.cpp in Sources */,
 				9EDF5EC32BBDA28400EC9DB1 /* input.cpp in Sources */,
 				9EDF5EC62BBDA2AA00EC9DB1 /* draw.cpp in Sources */,
+				9EDF5EF02BD1551B00EC9DB1 /* lookup.cpp in Sources */,
 				9EDF5ECF2BBE074800EC9DB1 /* util.cpp in Sources */,
+				9EDF5EF32BD1554F00EC9DB1 /* widgets.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
