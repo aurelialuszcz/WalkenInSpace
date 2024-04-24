@@ -12,7 +12,6 @@ extern Stage stage;
 void fireBullet(void);
 void clipPlayer(void);
 void doPlayer(void);
-
 void initPlayer()
 {
     playerTexture = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/player64x64.png");

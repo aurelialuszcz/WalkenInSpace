@@ -31,7 +31,7 @@ SDL_Texture *loadTexture(char *filename)
 
 // rectangle texture to draw enemies and bullets
 
-void blit(SDL_Texture *texture, int x, int y)
+void rectangle(SDL_Texture *texture, int x, int y)
 {
     SDL_Rect dest;
     

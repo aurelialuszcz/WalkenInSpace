@@ -1,11 +1,9 @@
 // game stage
 
 #include "common.hpp"
-#include "texture.hpp"
 #include "draw.hpp"
 #include "stage.hpp"
 #include "util.hpp"
-#include "level.hpp"
 #include "starfield.hpp"
 #include "player.hpp"
 #include "enemy.hpp"
@@ -31,7 +29,7 @@ int bulletHitFighter(Entity *b);
 void doEnemies(void);
 void fireAlienBullet(Entity *e);
 void clipPlayer(void);
-static void resetStage(void);
+void resetStage(void);
 void drawBackground(void);
 void initStarfield(void);
 void drawStarfield(void);
@@ -53,17 +51,15 @@ void initStage(void)
     memset(&stage, 0, sizeof(Stage));
     stage.fighterTail = &stage.fighterHead;
     stage.bulletTail = &stage.bulletHead;
-    stage.explosionTail = &stage.explosionHead;
-    stage.debrisTail = &stage.debrisHead;
-
-    // character textures
+    //stage.explosionTail = &stage.explosionHead;
+    //stage.debrisTail = &stage.debrisHead;
 
     resetStage();
 }
 
 // function to reset the game once player dead
 
-static void resetStage(void)
+void resetStage(void)
 {
     Entity    *e;
 

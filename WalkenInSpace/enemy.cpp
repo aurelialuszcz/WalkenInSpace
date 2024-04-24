@@ -10,6 +10,7 @@ static Entity *player;
 extern App app;
 extern Stage stage;
 extern int enemySpawnTimer;
+static int playerShotCount = 0;
 
 void fireAlienBullet(Entity *e);
 void doEnemies(void);
@@ -92,7 +93,7 @@ void fireAlienBullet(Entity *e)
     bullet->dx *= ALIEN_BULLET_SPEED;
     bullet->dy *= ALIEN_BULLET_SPEED;
 
-    e->reload = (rand() % FPS * 2);
+    e->reload = (/*rand() %*/ FPS * 2);
 }
 
 // enemy function when player hit
@@ -142,6 +143,6 @@ void drawEnemy(void)
 
     for (e = stage.fighterHead.next; e != NULL; e = e->next)
     {
-        blit(e->texture, e->x, e->y);
+        rectangle(e->texture, e->x, e->y);
     }
 }

@@ -5,6 +5,7 @@
 
 struct Entity;
 
+void initBullets(void);
 void doBullets(void);
 int bulletHitFighter(Entity *b);
 void drawBullets(void);

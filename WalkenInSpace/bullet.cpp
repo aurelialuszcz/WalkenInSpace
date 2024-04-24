@@ -75,6 +75,6 @@ void drawBullets(void)
 
     for (b = stage.bulletHead.next; b != NULL; b = b->next)
     {
-        blit(b->texture, b->x, b->y);
+        rectangle(b->texture, b->x, b->y);
     }
 }

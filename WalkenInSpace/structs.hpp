@@ -12,8 +12,8 @@ typedef struct
 {
     SDL_Renderer *renderer;
     SDL_Window   *window;
-    Delegate      delegate;
-    int           keyboard[MAX_KEYBOARD_KEYS];
+    Delegate delegate;
+    int keyboard[MAX_KEYBOARD_KEYS];
 } App;
 
 struct Entity
@@ -32,35 +32,22 @@ struct Entity
     Entity      *next;
 };
 
-struct Explosion
+struct Bullet
 {
-    float      x;
-    float      y;
-    float      dx;
-    float      dy;
-    int        r, g, b, a;
-    Explosion *next;
-};
-
-struct Debris
-{
-    float        x;
-    float        y;
-    float        dx;
-    float        dy;
-    SDL_Rect     rect;
+    double        x;
+    double        y;
+    double        dx;
+    double        dy;
     SDL_Texture *texture;
-    int          life;
-    Debris      *next;
+    Entity       *owner;
+    Bullet       *next;
 };
 
 typedef struct
 {
-    Entity playerHead, *playerTail;
+    Entity    playerHead, *playerTail;
     Entity    fighterHead, *fighterTail;
     Entity    bulletHead, *bulletTail;
-    Explosion explosionHead, *explosionTail;
-    Debris    debrisHead, *debrisTail;
 } Stage;
 
 typedef struct
