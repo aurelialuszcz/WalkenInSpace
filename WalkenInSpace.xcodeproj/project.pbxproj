@@ -39,6 +39,7 @@
 		9EDF5EF32BD1554F00EC9DB1 /* widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EF12BD1554F00EC9DB1 /* widgets.cpp */; };
 		9EDF5EF62BD155D100EC9DB1 /* text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EF42BD155D100EC9DB1 /* text.cpp */; };
 		9EDF5EF92BD1562700EC9DB1 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EF72BD1562700EC9DB1 /* texture.cpp */; };
+		9EDF5EFC2BD98E9F00EC9DB1 /* background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5EFA2BD98E9F00EC9DB1 /* background.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -130,6 +131,8 @@
 		9EDF5EF52BD155D100EC9DB1 /* text.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = text.hpp; sourceTree = "<group>"; };
 		9EDF5EF72BD1562700EC9DB1 /* texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
 		9EDF5EF82BD1562700EC9DB1 /* texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = texture.hpp; sourceTree = "<group>"; };
+		9EDF5EFA2BD98E9F00EC9DB1 /* background.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = background.cpp; sourceTree = "<group>"; };
+		9EDF5EFB2BD98E9F00EC9DB1 /* background.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = background.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 				9EDF5EF12BD1554F00EC9DB1 /* widgets.cpp */,
 				9EDF5EF22BD1554F00EC9DB1 /* widgets.hpp */,
 				9EDF5ECA2BBDB92500EC9DB1 /* stage.cpp */,
+				9EDF5EFA2BD98E9F00EC9DB1 /* background.cpp */,
+				9EDF5EFB2BD98E9F00EC9DB1 /* background.hpp */,
 				9EDF5EDF2BD023BE00EC9DB1 /* bullet.cpp */,
 				9EDF5EE02BD023BE00EC9DB1 /* bullet.hpp */,
 				9EDF5ED32BD00DEF00EC9DB1 /* starfield.cpp */,
@@ -335,6 +340,7 @@
 				9EDF5EC62BBDA2AA00EC9DB1 /* draw.cpp in Sources */,
 				9EDF5EF02BD1551B00EC9DB1 /* lookup.cpp in Sources */,
 				9EDF5ECF2BBE074800EC9DB1 /* util.cpp in Sources */,
+				9EDF5EFC2BD98E9F00EC9DB1 /* background.cpp in Sources */,
 				9EDF5EF32BD1554F00EC9DB1 /* widgets.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

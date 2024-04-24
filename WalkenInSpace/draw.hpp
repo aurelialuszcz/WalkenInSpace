@@ -2,6 +2,8 @@
 #define draw_hpp
 
 #include <stdio.h>
+#include "SDL_image.h"
+#include "SDL.h"
 
 void prepareScene(void);
 void presentScene(void);

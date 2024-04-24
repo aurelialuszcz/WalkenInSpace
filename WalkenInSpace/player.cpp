@@ -123,11 +123,3 @@ void fireBullet(void)
 
     player->reload = 8;
 }
-
-/*void drawPlayer(void)
-{
-    Entity *e;
-        
-    blit(e->texture, e->x, e->y);
-}
-*/
