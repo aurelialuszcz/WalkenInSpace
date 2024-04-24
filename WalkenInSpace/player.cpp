@@ -10,8 +10,8 @@ extern App app;
 extern Stage stage;
 
 void fireBullet(void);
-//static void clipPlayer(void);
-//static void doPlayer(void);
+void clipPlayer(void);
+void doPlayer(void);
 
 void initPlayer()
 {
@@ -124,12 +124,10 @@ void fireBullet(void)
     player->reload = 8;
 }
 
-void drawPlayer(void)
+/*void drawPlayer(void)
 {
     Entity *e;
-
-    for (e = stage.playerHead.next; e != NULL; e = e->next)
-    {
-        blit(e->texture, e->x, e->y);
-    }
+        
+    blit(e->texture, e->x, e->y);
 }
+*/
