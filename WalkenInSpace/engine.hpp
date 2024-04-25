@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 void initSDL(void);
+void initGame(void);
 void cleanup(void);
 
 #endif /* engine_hpp */

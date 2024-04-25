@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 
+void initBackground(void);
 void drawBackground(void);
 void doBackground(void);
 

@@ -2,6 +2,10 @@
 
 #include "common.hpp"
 #include "engine.hpp"
+#include "background.hpp"
+#include "starfield.hpp"
+#include "score.hpp"
+#include "text.hpp"
 #include "SDL.h"
 #include "SDL_image.h"
 
@@ -40,6 +44,18 @@ void initSDL(void)
         printf("Failed to create renderer: %s\n", SDL_GetError());
         exit(1);
     }
+}
+
+void initGame(void)
+{
+    initBackground();
+
+    initStarfield();
+    
+    initFonts();
+
+    initHighscoreTable();
+    
 }
 
 void cleanup(void)

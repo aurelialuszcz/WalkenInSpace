@@ -4,6 +4,6 @@
 #include <stdio.h>
 
 void initStage(void);
-static void resetStage(void);
+void addPoints(int x, int y);
 
 #endif /* stage_hpp */

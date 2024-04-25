@@ -2,6 +2,7 @@
 #include "player.hpp"
 #include "draw.hpp"
 #include "stage.hpp"
+#include "util.hpp"
 
 static Entity      *player;
 static SDL_Texture *playerTexture;

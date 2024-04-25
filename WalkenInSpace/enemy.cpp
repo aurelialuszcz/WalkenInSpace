@@ -20,21 +20,6 @@ void spawnEnemies(void);
 
 static SDL_Texture *alienBulletTexture = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/alienBullet.png");
 
-// enemy spawning
-
-void doEnemies(void)
-{
-    Entity *e;
-
-    for (e = stage.fighterHead.next; e != NULL; e = e->next)
-    {
-        if (e != player && player != NULL && --e->reload <= 0)
-        {
-            fireAlienBullet(e);
-        }
-    }
-}
-
 // random spawning of enemies on the screen
 
 void spawnEnemies(void)
@@ -72,7 +57,7 @@ void spawnEnemies(void)
 void fireAlienBullet(Entity *e)
 {
     Entity *bullet;
-    
+
     bullet = (Entity *)malloc(sizeof(Entity));
     memset(bullet, 0, sizeof(Entity));
     stage.bulletTail->next = bullet;
@@ -93,7 +78,7 @@ void fireAlienBullet(Entity *e)
     bullet->dx *= ALIEN_BULLET_SPEED;
     bullet->dy *= ALIEN_BULLET_SPEED;
 
-    e->reload = (/*rand() %*/ FPS * 2);
+    e->reload = (rand() % FPS * 2);
 }
 
 // enemy function when player hit
@@ -132,6 +117,21 @@ void doFighters(void)
         }
 
         prev = e;
+    }
+}
+
+// enemy spawning
+
+void doEnemies(void)
+{
+    Entity *e;
+    
+    for (e = stage.fighterHead.next; e != NULL; e = e->next)
+    {
+        if (e != player && player != NULL && --e->reload <= 0)
+        {
+            fireAlienBullet(e);
+        }
     }
 }
 

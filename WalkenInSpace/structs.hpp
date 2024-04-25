@@ -14,6 +14,7 @@ typedef struct
     SDL_Window   *window;
     Delegate delegate;
     int keyboard[MAX_KEYBOARD_KEYS];
+    char inputText[MAX_LINE_LENGTH];
 } App;
 
 struct Entity
@@ -48,6 +49,8 @@ typedef struct
     Entity    playerHead, *playerTail;
     Entity    fighterHead, *fighterTail;
     Entity    bulletHead, *bulletTail;
+    Entity    pointsHead, *pointsTail;
+    int       score;
 } Stage;
 
 typedef struct
@@ -56,3 +59,14 @@ typedef struct
     int y;
     int speed;
 } Star;
+
+typedef struct
+{
+    int  recent;
+    int  score;
+} Highscore;
+
+typedef struct
+{
+    Highscore highscore[NUM_HIGHSCORES];
+} Highscores;

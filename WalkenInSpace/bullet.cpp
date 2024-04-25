@@ -10,7 +10,37 @@ static Entity *player;
 
 int bulletHitFighter(Entity *e);
 
-// remove bullet if it leaves the screen (except for right hand side)
+// remove bullet if it leaves the screen (except for top)
+
+int bulletHitFighter(Entity *b)
+{
+    Entity *e;
+
+    for (e = stage.fighterHead.next; e != NULL; e = e->next)
+    {
+        if (e->side != b->side && collision(b->x, b->y, b->w, b->h, e->x, e->y, e->w, e->h))
+        {
+            if (e == player && e->hitCount == 0) {
+                            e->hitCount = 1;
+            } else if (e->hitCount == 1) {
+                // Two bullets hit the player, kill the player
+                b->health = 0;
+                e->health = 0;
+                e->hitCount = 0;
+            } else if (e != player) {
+                b->health = 0;
+                e->health = 0;
+            }
+            
+            addPoints(e->x + e->w / 2, e->y + e->h / 2);
+            
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 
 void doBullets(void)
 {
@@ -37,34 +67,6 @@ void doBullets(void)
 
         prev = b;
     }
-}
-
-// destroy enemy when bullet hits it
-
-int bulletHitFighter(Entity *b)
-{
-    Entity *e;
-
-    for (e = stage.fighterHead.next; e != NULL; e = e->next)
-    {
-        if (e->side != b->side && collision(b->x, b->y, b->w, b->h, e->x, e->y, e->w, e->h))
-        {
-            if (e == player && e->hitCount == 0) {
-                            e->hitCount = 1;
-            } else if (e->hitCount == 1) {
-                // Two bullets hit the player, kill the player
-                b->health = 0;
-                e->health = 0;
-                e->hitCount = 0;
-            } else if (e != player) {
-                b->health = 0;
-                e->health = 0;
-            }
-            return 1;
-        }
-    }
-
-    return 0;
 }
 
 // draw bullets to screen

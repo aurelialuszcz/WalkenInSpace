@@ -9,11 +9,15 @@ static SDL_Texture *background;
 
 // draw background to screen
 
+void initBackground(void)
+{
+    background = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/background_.png");
+
+    backgroundY = 0;
+}
+
 void drawBackground(void)
 {
-
-    background = loadTexture("/Users/aurelialuszcz/Documents/WalkenInSpace/WalkenInSpace/assets/background_.png");
-    
     SDL_Rect dest;
     int      y;
 
